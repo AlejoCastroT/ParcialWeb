@@ -44,7 +44,7 @@ function Dashboard() {
           if (response.status === 200) {
             setSelectedProduct(response.data.result || {});
           } else {
-            throw new Error(`Unexpected status code: ${response.status}`);
+            throw new Error(`Código de estado inesperado: ${response.status}`);
           }
         } catch (err) {
           console.error('Error al cargar los detalles del producto:', err.response || err.message);
@@ -121,7 +121,7 @@ function Dashboard() {
               <img
                 src={selectedProduct.image || 'https://via.placeholder.com/400x300'}
                 alt={selectedProduct.name}
-                className="w-full h-64 object-cover rounded-lg mb-4 shadow-md"
+                className="w-full full object-cover rounded-lg mb-4 shadow-md"
               />
               <h2 className="text-3xl font-bold mb-2 text-gray-800">{selectedProduct.name}</h2>
               <p className="text-lg mb-2 text-gray-600">{selectedProduct.description}</p>
